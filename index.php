@@ -1,42 +1,42 @@
 <?php
 $fp = fopen("counter.txt", "r+");
 
-while(!flock($fp, LOCK_EX)) {  // acquire an exclusive lock
-    // waiting to lock the file
+while(!flock($fp, LOCK_EX)) {  
 }
-
 $counter = intval(fread($fp, filesize("counter.txt")));
 $counter++;
-
-ftruncate($fp, 0);      // truncate file
-fwrite($fp, $counter);  // set your data
-fflush($fp);            // flush output before releasing the lock
-flock($fp, LOCK_UN);    // release the lock
-
+ftruncate($fp, 0);  
+fwrite($fp, $counter);
+fflush($fp);    
+flock($fp, LOCK_UN);
 fclose($fp);
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="it" prefix="og: http://ogp.me/ns#">
   <head>
     <title>Generazione Auto Certificazione Online</title>
     <meta charset="utf-8" />
+    <meta name ="description" content="1.Compila, 2 Scarica, 3 Stampa l'autodichiarazione per gli spostamenti. L'unico tool open source per la generazione online dell'autodichiarazione. Ai sensi degli artt. 46 r 47 del D.P.R. 28. "/>
+    <meta name ="keywords" content="autodichiarazione, artt 46, artt 47, D.P.R. 28,"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Jacopo Bonomi" />
+    <meta property="og:url"                content="https://autodichiarazione-online.it/" />
+    <meta property="og:title"              content="Autodichiarazione online PDF gratis" />
+    <meta property="og:description"        content="1.Compila, 2 Scarica, 3 Stampa l'autodichiarazione per gli spostamenti." />
+    <meta property="og:image"              content="https://autodichiarazione-online.it/img/facebook-logo.png" />
+    <meta property="og:type"              content="website" />
+    <meta property="og:image:width"              content="250" />
+    <meta property="og:image:height"              content="200" />
+    <link rel="icon" href="/img/favicon.ico" />
     <script src="https://unpkg.com/pdf-lib@1.4.0"></script>
     <script src="https://unpkg.com/downloadjs@1.4.7"></script>
-    <script src="https://unpkg.com/@pdf-lib/fontkit@0.0.4"></script>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-
     <link rel="stylesheet" type="text/css" href="css/style.css" />
   </head>
   <body>
     <div class="row">
       <div class="col-12 col-sm-6 offset-sm-3">
         <header>
-          <img src="img/logo.svg" style="margin-bottom:45px" />
+          <img alt="logo generazione certificazione online" src="img/logo.svg" style="margin-bottom:45px" />
         </header>
         <div class="istruzione">
           <p><span class="bold">1.</span> Compila l'autodichiarazione</p>
@@ -49,16 +49,16 @@ fclose($fp);
       </div>
     </div>
     <br />
-    <p class="bold h1-size">
+    <p class="bold h1-size" style="margin-top:15px">
       Autodichiarazione ai sensi degli artt. 46 r 47 del D.P.R. 28 Dicembre
-      2000, N. 4
+      2000, N. 445
     </p>
     <div class="margin-top-default"></div>
     <div class="row">
       <div class="col-12 col-sm-3">
-        <p class="title-input margin-top-default">
+        <label for="nome" class="title-input margin-top-default">
           Il sottoscritto / La sottoscritta
-        </p>
+        </label>
         <input
           class="custom-input"
           id="nome"
@@ -67,7 +67,7 @@ fclose($fp);
         />
       </div>
       <div class="col-12 col-sm-3">
-        <p class="title-input">Nato/a il</p>
+        <label for="nato-il" class="title-input">Nato/a il</label>
         <input
           class="custom-input"
           id="nato-il"
@@ -76,7 +76,7 @@ fclose($fp);
         />
       </div>
       <div class="col-12 col-sm-3">
-        <p class="title-input">a</p>
+        <label for="a" class="title-input">a</label>
         <input
           class="custom-input"
           id="a"
@@ -85,7 +85,7 @@ fclose($fp);
         />
       </div>
       <div class="col-12 col-sm-3">
-        <p class="title-input">Residente in</p>
+        <label for="residente-in" class="title-input">Residente in</label>
         <input
           class="custom-input"
           id="residente-in"
@@ -96,7 +96,7 @@ fclose($fp);
     </div>
     <div class="row">
       <div class="col-12 col-sm-3">
-        <p class="title-input">Via</p>
+        <label for="via" class="title-input">Via</label>
         <input
           class="custom-input"
           id="via"
@@ -105,7 +105,7 @@ fclose($fp);
         />
       </div>
       <div class="col-12 col-sm-3">
-        <p class="title-input">Identificato a mezzo</p>
+        <label for="mezzo-id" class="title-input">Identificato a mezzo</label>
         <input
           class="custom-input"
           id="mezzo-id"
@@ -114,7 +114,7 @@ fclose($fp);
         />
       </div>
       <div class="col-12 col-sm-3">
-        <p class="title-input">Nr.</p>
+        <label for="numero" class="title-input">Nr.</label>
         <input
           class="custom-input"
           id="numero"
@@ -123,7 +123,7 @@ fclose($fp);
         />
       </div>
       <div class="col-12 col-sm-3">
-        <p class="title-input">Utenza telefonica</p>
+        <label for="utenza-telefonica" class="title-input">Utenza telefonica</label>
         <input
           class="custom-input"
           id="utenza-telefonica"
@@ -142,9 +142,9 @@ fclose($fp);
     <br />
     <div class="row">
       <div class="col-12 col-sm-3">
-        <p class="title-input margin-top-default">
+        <label for="luogo-di-partenza" class="title-input margin-top-default">
           Di essere in transito da
-        </p>
+        </label>
         <input
           class="custom-input"
           id="luogo-di-partenza"
@@ -153,7 +153,7 @@ fclose($fp);
         />
       </div>
       <div class="col-12 col-sm-3">
-        <p class="title-input">proveniente da</p>
+        <label for="luogo-di-provenienza" class="title-input">proveniente da</label>
         <input
           class="custom-input"
           id="luogo-di-provenienza"
@@ -162,7 +162,7 @@ fclose($fp);
         />
       </div>
       <div class="col-12 col-sm-3">
-        <p class="title-input">e diretto a</p>
+        <label for="luogo-di-destinazione" class="title-input">e diretto a</label>
         <input
           class="custom-input"
           id="luogo-di-destinazione"
@@ -184,7 +184,7 @@ fclose($fp);
     </p>
     <div class="row">
       <div class="col-12 col-sm-4">
-        <p class="title-input">Che il viaggio è determinato da:</p>
+        <label for="viaggio" class="title-input">Che il viaggio è determinato da:</label>
         <select
           class="custom-input"
           id="viaggio"
@@ -200,7 +200,7 @@ fclose($fp);
         </select>
       </div>
       <div class="col-12 col-sm-8">
-        <p class="title-input">A questo riguardo, dichiaro che:</p>
+        <label for="dichiarazione" class="title-input">A questo riguardo, dichiaro che:</label>
         <textarea
           id="dichiarazione"
           cols="30"
@@ -221,43 +221,17 @@ fclose($fp);
         </div>
       </div>
     </div>
-    <div class="textcenter" style="margin-top: 25px;">
-    <!-- Pusalnte Dona PayPal-->
-    <span style="font-size: 14px;margin-bottom: 10px;">Se vuoi offrirci un caffé perchè ti è stato utile clicca qui!</span>
-    <form
-      action="https://www.paypal.com/cgi-bin/webscr"
-      method="post"
-      style="margin-bottom: 0;margin-top: 15px;"
-      target="_top"
-    >
-      <input type="hidden" name="cmd" value="_s-xclick" />
-      <input type="hidden" name="hosted_button_id" value="PDWXTYNHQUHMC" />
-      <input
-        type="image"
-        src="https://www.paypalobjects.com/it_IT/IT/i/btn/btn_donate_SM.gif"
-        border="0"
-        name="submit"
-        title="PayPal - The safer, easier way to pay online!"
-        alt="Fai una donazione con il pulsante PayPal"
-      />
-      <img
-        alt=""
-        border="0"
-        src="https://www.paypal.com/it_IT/i/scr/pixel.gif"
-        width="1"
-        height="1"
-      />
-    </form>
-  </div>
+
     <footer>
       <p class="" style="margin-bottom:5px">
         Questo è il nostro contributo per gli italiani.   &nbsp;Powered by
-        <a class="bold" target="_blank" href="https://slumdesign.com">Slum</a>.
+        <a class="bold" target="_blank" rel="noreferrer" href="https://slumdesign.com">Slum</a>.
       </p>
       Il codice sorgente è pubblico e sotto licenza GNU General Public License
       v3.0. Il progetto lo trovi
       <a
         class="bold"
+        rel="noreferrer"
         target="_blank"
         href="https://github.com/jacopobonomi/generatore-autocertificazione-art76"
         >qui</a
