@@ -1,0 +1,113 @@
+
+@import url('https://fonts.googleapis.com/css?family=Be+Vietnam:300,400,600,700&display=swap');
+body {
+    max-width: 100%;
+    font-family: 'Be Vietnam', sans-serif;
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+  .title{
+    margin-bottom: 0;
+    font-size: 22px;
+    line-height: 1em;
+  }
+  .small {
+    font-size: 18px;
+    text-align: center;
+    margin: 25px;
+  }
+  header{
+    margin-top: 50px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 21px;
+  }
+  header p{
+    padding-bottom: 1px;
+    line-height: 1em;
+  }
+  .bold{
+    font-weight: bold;
+  }
+  
+  .istruzione{
+    border:2px solid #1CC422;
+    padding: 20px;
+    border-radius: 25px;
+
+  }
+  .istruzione p{
+    line-height: 1em;
+    margin-bottom: 5px;
+  }
+  
+  .h1-size{
+    font-size: 22px;
+    line-height: 1em;
+  }
+  .title-input{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+  .custom-input{
+    border: 1px solid #DDDDDD;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  .margin-top-default{
+    margin-top: 10px;
+  }
+  .underline{
+    text-decoration: underline;
+  }
+  .primary-color{
+    color:#1CC422;
+  }
+  footer{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 12px;
+  }
+  footer a{
+    color:black;
+  }
+  .textcenter{
+    text-align: center;
+  }
+  footer a:hover{
+    color:black;
+    text-decoration: underline;
+  }
+  textarea{
+    width: 100%;
+    padding:10px;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+  }
+  button {
+    border-radius: 5px;
+    background-color: #5CB85C;
+    border: none;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+  }
+  .nascondi-desktop{
+    display: none;
+  }
+  @media screen and (max-width: 992px) {
+    body {
+      margin-left: 40px;
+      margin-right: 40px;
+  
+    }
+    .nascondi-mobile{
+      display: none;
+    }
+  }
+  
